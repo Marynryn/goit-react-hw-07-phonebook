@@ -1,41 +1,45 @@
 
 import { nanoid } from 'nanoid';
 import css from '../Form/Form.module.css';
-import { useSelector, useDispatch } from "react-redux"
-import { addContact, getContacts } from 'components/redux/mySlice';
+// import { useSelector, useDispatch } from "react-redux"
+// import { addContact, getContacts } from '../../redux/mySlice';
 
 
 export default function Form() {
-  const contacts = useSelector(getContacts)
-  const dispatch = useDispatch();
+  // const contacts = useSelector(getContacts)
+  // const dispatch = useDispatch();
   const nameId = nanoid();
   const numberId = nanoid();
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const form = event.currentTarget
-    const contact = {
-      id: nanoid(),
-      name: form.elements.name.value,
-      number: form.elements.number.value,
-    };
-    const isContactExists = contacts.some(
-      contact => contact.name === form.elements.name.value
-    );
-    if (isContactExists) {
-      alert(`${form.elements.name.value} is already in contacts.`);
-    } else {
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
+  //   const form = event.currentTarget;
+  //   const contact = {
+  //     id: nanoid(),
+  //     name: form.elements.name.value,
+  //     number: form.elements.number.value,
+  //   };
+  //   const isContactExists = contacts.some(
+  //     contact => contact.name === form.elements.name.value
+  //   );
+  //   if (isContactExists) {
+  //     alert(`${form.elements.name.value} is already in contacts.`);
+  //   } else {
 
-      dispatch(addContact(contact));
-    }
-    form.reset();
-  };
+  //     // dispatch(addContact(contact));
+  //   }
+  //   form.reset();
+  // };
 
 
   return (
     <div>
       <div className="form">
-        <form className={css.form_phonebook} onSubmit={handleSubmit}>
+        <form className={css.form_phonebook}
+        // onSubmit={handleSubmit}
+
+
+        >
           <label htmlFor={nameId} className={css.label}>
             <h2 className={css.form_name}>Name</h2>
             <input

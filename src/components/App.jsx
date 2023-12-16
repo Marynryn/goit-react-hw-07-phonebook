@@ -1,11 +1,11 @@
 
+
 import Form from '../components/Form/Form';
 import Filter from './Filter/Filter';
 import { ListContacts } from './ListContacts/ListContacts';
 
-
-
 export function App() {
+
   return (
     <div
       style={{
