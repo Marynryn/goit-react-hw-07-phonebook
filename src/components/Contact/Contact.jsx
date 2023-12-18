@@ -9,10 +9,10 @@ const Contact = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (render.current) {
-      render.current = false;
-      return;
-    }
+    // if (render.current) {
+    //   render.current = false;
+    //   return;
+    // }
     dispatch(fetchContacts());
   }, [dispatch]);
 
