@@ -14,10 +14,13 @@ export default function Form() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.currentTarget;
+    const formatPhone = phone => {
+      return phone.replace(/(\d{3})(\d{2})(\d{2})/, `$1-$2-$3`);
+    };
     const contact = {
       id: nanoid(),
       name: form.elements.name.value,
-      phone: form.elements.phone.value,
+      phone: formatPhone(form.elements.phone.value),
       createAt: nanoid(),
     };
     const isContactExists = contacts.some(

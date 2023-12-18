@@ -5,14 +5,10 @@ import { useEffect } from 'react';
 import { selectVisibleContacts } from '../../store/selectors';
 
 const Contact = () => {
-  // const render = useRef(true);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    // if (render.current) {
-    //   render.current = false;
-    //   return;
-    // }
+  
     dispatch(fetchContacts());
   }, [dispatch]);
 
