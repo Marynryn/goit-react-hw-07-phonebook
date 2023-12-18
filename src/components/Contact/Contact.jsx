@@ -1,11 +1,11 @@
 import css from '../Contact/Contact.module.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchContacts, deleteContact } from '../../store/operations';
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 import { selectVisibleContacts } from '../../store/selectors';
 
 const Contact = () => {
-  const render = useRef(true);
+  // const render = useRef(true);
   const dispatch = useDispatch();
 
   useEffect(() => {
