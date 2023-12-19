@@ -1,21 +1,15 @@
 import css from '../Contact/Contact.module.css';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchContacts, deleteContact } from '../../store/operations';
-import { useEffect } from 'react';
+import { deleteContact } from '../../store/operations';
+
 import { selectVisibleContacts } from '../../store/selectors';
 
 const Contact = () => {
   const dispatch = useDispatch();
-
-  useEffect(() => {
-  
-    dispatch(fetchContacts());
-  }, [dispatch]);
-
   const filterName = useSelector(selectVisibleContacts);
 
   return (
-    <>
+    <ul className={css.list}>
       {filterName.map((contact, createAt) => (
         <li key={createAt} className={css.contact}>
           {contact.name}: {contact.phone}{' '}
@@ -28,7 +22,7 @@ const Contact = () => {
           </button>
         </li>
       ))}
-    </>
+    </ul>
   )
 };
 export default Contact;
